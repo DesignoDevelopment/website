@@ -767,6 +767,27 @@ footer ul img {
     display: none;
   }
 
+  header img {
+    height: 32px;
+  }
+
+  header {
+    padding: 16px;
+    position: relative;
+    border-radius: 48px;
+    gap: 3rem;
+    margin-top: 32px;
+    margin-left: 64px;
+    margin-right: 64px;
+    /*max-width: 400px;*/
+    min-width: 250px;
+
+  }
+
+  header #burger i {
+    font-size: 32px;
+  }
+
   main #hero {
     padding-top: 7rem;
     padding-bottom: 7rem;
@@ -794,7 +815,13 @@ footer ul img {
   main #about {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+
   }
+
+  main #about h3 {
+    font-size: 1.5rem;
+  }
+
 
   main #projects {
     padding-left: 0.5rem;
@@ -817,5 +844,7 @@ footer ul img {
   main #contact {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 }
