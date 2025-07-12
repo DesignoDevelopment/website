@@ -43,23 +43,46 @@
   </head>
   <body>
     <div class="container">
-      <header class="header" itemscope itemtype="https://schema.org/WPHeader">
-        <img itemprop="logo" src="/Designo Wordmark.png" />
-        <nav itemscope itemtype="https://schema.org/SiteNavigationElement">
+      <div id="header-wrapper" class="header-wrapper">
+        <header class="header drop-in" itemscope itemtype="https://schema.org/WPHeader">
+          <img itemprop="logo" src="/Designo Wordmark transparent.png" />
+          <nav class="desktop" itemscope itemtype="https://schema.org/SiteNavigationElement">
+            <a href="#about">About us</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#projects">Projects</a>
+            <button class="filled" id="talk-btn">Let's talk</button>
+          </nav>
+          <nav id="burger" class="mobile" itemscope itemtype="https://schema.org/SiteNavigationElement">
+            <i class="ph ph-list" aria-hidden="true"></i>
+          </nav>
+        </header>
+      </div>
+
+
+      <div class="mobile-menu-wrapper">
+        <div class="mobile-menu-close">x</div>
+        <div class="mobile-menu">
+
+
           <a href="#about">About us</a>
           <a href="#pricing">Pricing</a>
           <a href="#projects">Projects</a>
-          <button class="filled" id="talk-btn">Let's talk</button>
-        </nav>
-      </header>
+          <button href="#contact" class="filled" id="mobile-talk-btn">Let's talk</button>
+
+        </div>
+      </div>
+
 
       <main itemscope itemtype="https://schema.org/WebPage" role="main">
+
         <section
           itemprop="mainEntity"
           itemscope
           itemtype="https://schema.org/Service"
           id="hero"
+          class="fade-in-zoom"
         >
+
           <h1 itemprop="headline" class=".section-header">
             Build with clarity.
           </h1>
@@ -80,7 +103,8 @@
             </a>
           </div>
         </section>
-        <section id="testimonials" class="testimonials">
+
+        <section id="testimonials" class="fade-in-left testimonials">
           <div class="scroll-container">
             <div class="scroller">
               <div class="card-group">
@@ -238,16 +262,17 @@
             </div>
           </div>
         </section>
-        <section id="about">
+        <section id="about" class="fade-in-right">
           <h3>
             Designo is a design and development studio that specializes in
             crafting beautiful, modern, and sales-focused websites for
             businesses. We do everything from designing to deploying finished
-            products with modern and scalable technologies, all while not
-            breaking the bank.
+            products with modern and scalable technologies, all without
+            "breaking the bank".
           </h3>
         </section>
-        <section id="projects">
+
+        <section id="projects" class="fade-in-up">
           <h2>What we've done.</h2>
           <div class="cards">
             <div class="card">
@@ -285,7 +310,7 @@
             </div>
           </div>
         </section>
-        <section id="pricing">
+        <section id="pricing" class="fade-in-zoom">
           <h2>Pick what you need.</h2>
           <div class="tiers">
             <div class="tier">
@@ -304,6 +329,10 @@
                   <li>&check; 1-2 week delivery</li>
                 </ul>
               </div>
+                <hr>
+                <div class="button-container">
+                    <button class="outlined starter">Get started</button>
+                </div>
             </div>
             <div class="tier">
               <div class="content">
@@ -323,6 +352,10 @@
                   <li>&check; 2 week support period</li>
                 </ul>
               </div>
+                <hr>
+                <div class="button-container">
+                    <button class="outlined pro">Get started</button>
+                </div>
             </div>
             <div class="tier">
               <div class="content">
@@ -343,32 +376,44 @@
                   <li>&check; Site animations</li>
                 </ul>
               </div>
+                <hr>
+                <div class="button-container">
+                    <button class="outlined enterprise">Get started</button>
+                </div>
             </div>
           </div>
         </section>
-        <section id="contact">
+        <section id="contact" class="fade-in-up">
           <h2>Let's talk.</h2>
           <p>
             Fill out the form and leave a message. We hope to talk to you soon!
           </p>
-          <form onsubmit="return" id="contactForm">
-            <label for="fname">First name *</label>
-            <input
-              type="text"
-              placeholder="Your first name"
-              id="fname"
-              name="fname"
-              required
-            />
-            <!-- <span class="error-message" id="fname-error"></span> -->
-            <label for="lname">Last name *</label>
-            <input
-              type="text"
-              placeholder="Your last name"
-              id="lname"
-              name="lname"
-              required
-            />
+          <form action="https://formsubmit.co/designodevelopment@gmail.com" method="POST" id="contactForm">
+              <div class="name-container">
+                  <div class="name-group">
+                      <label for="fname">First name *</label>
+                      <input
+                              type="text"
+                              placeholder="Your first name"
+                              id="fname"
+                              name="fname"
+                              required
+                      />
+                  </div>
+
+                  <div class="name-group">
+                      <label for="lname">Last name *</label>
+                      <input
+                              type="text"
+                              placeholder="Your last name"
+                              id="lname"
+                              name="lname"
+                              required
+                      />
+                  </div>
+
+              </div>
+
             <!-- <span  class="error-message" id="lname-error"></span> -->
             <label for="tier">Project Tier *</label>
             <select name="tier" id="tier" required>
@@ -392,10 +437,10 @@
             <button id="submit" class="filled" type="submit">
               Send message
             </button>
-            <small
-              >*You may have to disable pop-up blockers for this form to
-              work*</small
-            >
+<!--            <small-->
+<!--              >*You may have to disable pop-up blockers for this form to-->
+<!--              work*</small-->
+<!--            >-->
           </form>
         </section>
       </main>

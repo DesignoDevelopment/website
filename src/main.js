@@ -1,51 +1,68 @@
 import { app as firebase } from "./firebase-config.js";
 
+// Initialize scroll animations when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeScrollAnimations();
+
+});
+
 const talkBtn = document.getElementById('talk-btn');
 talkBtn.addEventListener('click', () => {
   location.href = '/#contact';
 })
 
-const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', (e) => {
-
-  e.preventDefault();
-
-  const to = "designodevelopment@gmail.com";
-  const subject = encodeURIComponent("Designo Project Inquiry");
-
-  const name = contactForm.fname.value + " " + contactForm.lname.value;
-
-  const tier = contactForm.tier.value;
-
-  let plans = tier.split(" - ");
-  const projectType = plans[0];
-  const budget = plans[1];
-
-  const message = contactForm.message.value;
-
-  const body = encodeURIComponent(
-    `
-    Hello,
-        
-    I would like a quote for my next endeavor. I will need the ${projectType} level and I am looking to spend ${budget}.
-    Some more info about my project:
-        
-    ${message}
-        
-    --${name}`
-  )
-
-  // Idk why u added these but i just left them in ig
-  const cc = encodeURIComponent("copy@example.com");
-  const bcc = encodeURIComponent("hidden@example.com");
-
-  window.open(`mailto:${to}?subject=${subject}&body=${body}`);
-
-  contactForm.reset();
-
-  showNotification("Thanks! Your form was successfully submitted.", "success");
-
+const mobileTalkBtn = document.getElementById('mobile-talk-btn');
+mobileTalkBtn.addEventListener('click', (e) => {
+    location.href = '/#contact';
+    mobileNavMenu.classList.remove("active");
+    document.getElementById("#contact").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+    });
 })
+
+
+const btns = document.querySelectorAll("main #pricing .tiers .tier .button-container button")
+const dropdown = document.querySelector("#tier")
+btns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const targetEl = document.getElementById('contact')
+        targetEl.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+        })
+        dropdown.value = btn.classList.value.split(" ")[1];
+    })
+})
+
+const burger = document.querySelector("#burger");
+const closeBtn = document.querySelector('.mobile-menu-close')
+const mobileNavMenu = document.querySelector(".mobile-menu-wrapper");
+
+burger.addEventListener('click', () => {
+    mobileNavMenu.classList.add("active");
+})
+
+closeBtn.addEventListener('click', () => {
+    mobileNavMenu.classList.remove("active");
+})
+
+const mobileNavBtns = document.querySelectorAll(".mobile-menu > a")
+mobileNavBtns.forEach(btn => {
+    btn.addEventListener('click', (e) =>{
+        const target = e.target.closest('a[href^="#"]')
+        const id = target.getAttribute('href')
+        const targetElement = document.querySelector(id)
+        if (targetElement) {
+            mobileNavMenu.classList.remove("active");
+            targetElement.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        }
+    })
+})
+
 
 document.addEventListener(
   "error",
@@ -75,3 +92,46 @@ document.addEventListener("click", function (e) {
     }
   }
 });
+
+//nav scroll anim
+var prevScrollpos = window.scrollY;
+window.onscroll = function() {
+    var currentScrollPos = window.scrollY;
+    if (prevScrollpos > currentScrollPos) {
+        document.getElementById("header-wrapper").style.top = "0";
+    } else {
+        document.getElementById("header-wrapper").style.top = "-200px";
+    }
+    prevScrollpos = currentScrollPos;
+}
+
+
+
+function initializeScrollAnimations() {
+    // Select all elements you want to animate
+    const animatedElements = document.querySelectorAll(
+        '.drop-in, .fade-in-up, .fade-in-left, .fade-in-right, .fade-in-zoom'
+    );
+
+    // Intersection Observer options
+    const observerOptions = {
+        threshold: 0.35, //percent of obj visible
+        rootMargin: '0px 0px -50px 0px' //observe this many px before enter
+    };
+
+    // Create the observer
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Start observing all elements
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+}
