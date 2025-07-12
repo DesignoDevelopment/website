@@ -100,15 +100,15 @@ a {
   transition: all 0.6s ease-out;
 }
 .fade-in-up {
-  transform: translateY(30px);
+  transform: translateY(90px);
 }
 
 .fade-in-left {
-  transform: translateX(-30px);
+  transform: translateX(-90px);
 }
 
 .fade-in-right {
-  transform: translateX(30px);
+  transform: translateX(39px);
 }
 
 .fade-in-zoom {
@@ -116,7 +116,7 @@ a {
 }
 
 .drop-in {
-  transform: translateY(-30px);
+  transform: translateY(-50px);
 }
 
 /* Visible states (applied by JavaScript) */
@@ -145,10 +145,9 @@ a {
   transform: translateY(0);
 }
 
-/* Optional: Add staggered delays for multiple elements */
-.fade-in-up:nth-child(1) { transition-delay: 0.1s; }
-.fade-in-up:nth-child(2) { transition-delay: 0.2s; }
-.fade-in-up:nth-child(3) { transition-delay: 0.3s; }
+#projects .cards .card:nth-child(1) { transition-delay: 0.3s; }
+#projects .cards .card:nth-child(2) { transition-delay: 0.6s; }
+#projects .cards .card:nth-child(3) { transition-delay: 0.9s; }
 
 .container .header-wrapper {
   position: fixed;
@@ -355,6 +354,7 @@ main #testimonials .scroll-container {
   overflow: hidden;
   width: 100%;
   border-radius: 32px;
+
 }
 
 main #testimonials .scroll-container .scroller {
@@ -493,6 +493,11 @@ main #pricing .tiers .tier {
   border-radius: 16px;
   min-width: 300px;
 }
+
+main #pricing .tiers .tier:nth-child(1) {transition-delay: 0.1s}
+main #pricing .tiers .tier:nth-child(2) {transition-delay: 0.2s}
+main #pricing .tiers .tier:nth-child(3) {transition-delay: 0.3s}
+
 
 main #pricing .tiers .tier .button-container {
     display: flex;
@@ -680,8 +685,10 @@ footer ul {
   font-weight: 300;
 }
 
+
 footer ul li {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  transition: 0.3s ease;
 }
 
 footer ul a {
@@ -690,8 +697,11 @@ footer ul a {
   transition: 0.3s ease;
 }
 
-footer ul a:hover {
+footer ul a:hover,
+footer ul a:focus,
+footer ul a:active{
   opacity: 100%;
+  transform: translateX(4px);
 }
 
 footer .first {
@@ -699,9 +709,15 @@ footer .first {
 }
 
 footer ul img {
-  height: 48px;
+  height: 64px;
+  margin: auto;
   object-fit: contain;
 }
+
+footer ul:nth-child(1) { transition-delay: 0.2s; }
+footer ul:nth-child(2) { transition-delay: 0.4s; }
+footer ul:nth-child(3) { transition-delay: 0.6s; }
+footer ul:nth-child(4) { transition-delay: 0.8s; }
 
 @keyframes scroll-loop {
   0% {
@@ -718,7 +734,7 @@ footer ul img {
 }
 
 .form-disclaimer a {
-  color: #c5ffc5;
+  color: #989898;
 }
 
 /* Fade-in animation for scroll */
