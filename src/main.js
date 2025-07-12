@@ -96,8 +96,9 @@ document.addEventListener("click", function (e) {
 //nav scroll anim
 var prevScrollpos = window.scrollY;
 window.onscroll = function() {
+    // console.log(window.scrollY)
     var currentScrollPos = window.scrollY;
-    if (prevScrollpos > currentScrollPos) {
+    if (prevScrollpos > currentScrollPos || window.scrollY <= 150) {
         document.getElementById("header-wrapper").style.top = "0";
     } else {
         document.getElementById("header-wrapper").style.top = "-200px";

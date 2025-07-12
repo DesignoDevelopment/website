@@ -768,14 +768,14 @@ footer ul img {
   }
 
   header img {
-    height: 32px;
+    height: 48px;
   }
 
   header {
     padding: 16px;
     position: relative;
     border-radius: 48px;
-    gap: 3rem;
+    gap: 4rem;
     margin-top: 32px;
     margin-left: 64px;
     margin-right: 64px;
