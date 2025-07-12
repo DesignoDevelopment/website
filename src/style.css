@@ -1,0 +1,552 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Geist", sans-serif;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background: black;
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 6rem 0rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: black;
+  color: white;
+}
+
+.outlined {
+  background: transparent;
+  color: white;
+  font-family: "Geist", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  padding: 0.7rem 1.2rem;
+  border-radius: 32px;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.outlined:hover {
+  background: white;
+  color: black;
+  opacity: 75%;
+}
+
+.outlined:active {
+  opacity: 50%;
+}
+
+.filled {
+  background: white;
+  color: black;
+  font-family: "Geist", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  padding: 0.7rem 1.2rem;
+  border-radius: 32px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.filled:hover {
+  opacity: 75%;
+}
+
+.filled:active {
+  opacity: 50%;
+}
+
+.error {
+  border-color: red !important;
+  color: red;
+}
+
+.error-message {
+  display: block;
+  color: var(--primary-red);
+  font-size: 0.875rem;
+  margin-top: var(--spacing-xs);
+  min-height: 1.25rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: black;
+  padding: 2rem 0rem;
+}
+
+.header.scrolled {
+  background-color: rgba(20, 20, 20, 0.98);
+  box-shadow: var(--shadow-md);
+}
+
+header img {
+  height: 64px;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav a {
+  padding-left: 2rem;
+  font-weight: 300;
+  transition: 0.3s ease;
+}
+
+header nav a:hover {
+  opacity: 75%;
+}
+
+header nav a:active {
+  opacity: 50%;
+}
+
+header nav button {
+  margin-left: 1.75rem;
+}
+
+main #hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 9rem 0rem;
+}
+
+main #hero h1 {
+  font-size: 72px;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+main #hero p {
+  font-size: 16px;
+  opacity: 75%;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+main #hero .actions {
+  display: flex;
+  align-items: center;
+}
+
+main #hero .actions button {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+main #testimonials {
+  padding: 2rem 0rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+}
+
+main #testimonials .scroll-container {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 32px;
+}
+
+main #testimonials .scroll-container .scroller {
+  display: flex;
+  width: max-content;
+  animation: scroll-loop 40s linear infinite;
+}
+
+main #testimonials .scroll-container .scroller .card-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+main #testimonials .scroll-container .scroller .card-group .card {
+  flex: 0 0 auto;
+  width: 384px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 32px;
+}
+
+main #testimonials .scroll-container .scroller .card-group .card .name {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+main #testimonials .scroll-container .scroller .card-group .card .name img {
+  height: 32px;
+  width: 32px;
+  margin-right: 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+main #testimonials .scroll-container .scroller .card-group .card p {
+  font-size: 16px;
+  font-weight: 300;
+  opacity: 75%;
+  margin-bottom: 16px;
+}
+
+main #testimonials .scroll-container .scroller .card-group .card .rating {
+  display: flex;
+  align-items: center;
+}
+
+main #about {
+  padding: 9rem 0rem;
+}
+
+main #about h3 {
+  font-weight: 300;
+  font-size: 32px;
+}
+
+main #projects h2 {
+  font-weight: 300;
+  font-size: 48px;
+  margin-bottom: 48px;
+}
+
+main #projects .cards {
+  display: flex;
+  gap: 0.5rem;
+}
+
+main #projects .cards .card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+main #projects .cards .card img {
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+}
+
+main #projects .cards .card .content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+main #projects .cards .card .content h3 {
+  font-weight: 300;
+  margin-bottom: 8px;
+  font-size: 24px;
+}
+
+main #projects .cards .card .content p {
+  opacity: 75%;
+  margin-bottom: 24px;
+}
+
+main #projects .cards .card .content button {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+main #pricing h2 {
+  font-weight: 300;
+  font-size: 48px;
+  margin-bottom: 48px;
+}
+
+main #pricing .tiers {
+  display: flex;
+  gap: 0.5rem;
+}
+
+main #pricing .tiers .tier {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+main #pricing .tiers .tier .content {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+main #pricing .tiers .tier .content h3 {
+  font-weight: 300;
+  opacity: 75%;
+}
+
+main #pricing .tiers .tier .content h2 {
+  margin-bottom: 2rem;
+}
+
+main #pricing .tiers .tier .content p {
+  opacity: 75%;
+  margin-bottom: 2rem;
+}
+
+main #pricing .tiers .tier .content ul {
+  list-style: none;
+}
+
+main #contact h2 {
+  font-weight: 300;
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+main #contact p {
+  margin-bottom: 48px;
+  opacity: 75%;
+}
+
+main #contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+main #contact form label {
+  opacity: 75%;
+  margin-bottom: 8px;
+}
+
+main #contact form input {
+  margin-bottom: 16px;
+  background: transparent;
+  color: white;
+  font-family: "Geist", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid white;
+  outline: 1px solid transparent;
+  transition: 0.3s ease;
+}
+
+main #contact form input:hover {
+  opacity: 75%;
+}
+
+main #contact form input:focus {
+  outline: 1px solid white;
+}
+
+main #contact form select {
+  margin-bottom: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: black;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: "Geist", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid white;
+  outline: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+main #contact form select.selected {
+  color: white;
+}
+
+main #contact form textarea {
+  margin-bottom: 16px;
+  resize: none;
+  background: black;
+  color: white;
+  font-family: "Geist", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid white;
+  min-height: 180px;
+  outline: 1px solid transparent;
+  transition: 0.3s ease;
+}
+
+main #contact form textarea:hover {
+  opacity: 75%;
+}
+
+main #contact form textarea:focus {
+  outline: 1px solid white;
+}
+
+footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer ul {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  font-weight: 300;
+}
+
+footer ul li {
+  margin-bottom: 8px;
+}
+
+footer ul a {
+  width: fit-content;
+  opacity: 75%;
+  transition: 0.3s ease;
+}
+
+footer ul a:hover {
+  opacity: 100%;
+}
+
+footer .first {
+  margin-right: 64px;
+}
+
+footer ul img {
+  height: 48px;
+  object-fit: contain;
+}
+
+@keyframes scroll-loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+small {
+  margin-top: 8px;
+  opacity: 75%;
+}
+
+/* Fade-in animation for scroll */
+.fade-init {
+  opacity: 0 !important;
+  transform: translateY(40px) !important;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto;
+}
+
+@media (max-width: 430px) {
+  .container {
+    max-width: 430px;
+  }
+
+  section {
+    padding: 3rem 0rem;
+  }
+
+  header nav a {
+    display: none;
+  }
+
+  main #hero {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
+  main #hero h1 {
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 32px;
+  }
+
+  main #hero p {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  main #hero .actions button {
+    font-size: 18px;
+  }
+
+  main #testimonials {
+    padding: 2rem 0.5rem;
+  }
+
+  main #about {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  main #projects {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  main #projects .cards {
+    flex-direction: column;
+  }
+
+  main #pricing .tiers {
+    flex-direction: column;
+  }
+
+  main #pricing {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  main #contact {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
