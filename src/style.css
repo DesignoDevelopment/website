@@ -583,6 +583,7 @@ main #contact form .name-container {
 main #contact form .name-container .name-group {
     display: flex;
     flex-direction: column;
+    width: max-content;
 
 }
 
@@ -711,9 +712,13 @@ footer ul img {
   }
 }
 
-small {
+.form-disclaimer {
   margin-top: 8px;
   opacity: 75%;
+}
+
+.form-disclaimer a {
+  color: #c5ffc5;
 }
 
 /* Fade-in animation for scroll */
