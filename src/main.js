@@ -116,7 +116,7 @@ function initializeScrollAnimations() {
 
     // Intersection Observer options
     const observerOptions = {
-        threshold: 0.35, //percent of obj visible
+        threshold: 0.25, //percent of obj visible
         rootMargin: '0px 0px -50px 0px' //observe this many px before enter
     };
 
